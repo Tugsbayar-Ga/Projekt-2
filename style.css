@@ -1,24 +1,90 @@
-@media screen and (max-width: 768px) {
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+/* --- CSS Variabler --- */
+:root {
+  --bg-page:         #0D0F14;
+  --bg-card:         #161920;
+  --bg-nav:          #0D0F14;
+  --bg-hero:         #111318;
+  --color-accent:    #00E5FF;
+  --color-accent2:   #7C4DFF;
+  --color-price:     #00E5FF;
+  --color-text:      #E8EAF0;
+  --color-muted:     #8890A4;
+  --color-border:    #252A35;
+  --color-success:   #00BFA5;
+  --color-danger:    #FF5252;
+  --font-heading:    'Syne', sans-serif;
+  --font-body:       'Space Grotesk', sans-serif;
+  --font-mono:       'JetBrains Mono', monospace;
+  --shadow-card:     0 4px 24px rgba(0, 229, 255, 0.06);
+  --shadow-hover:    0 8px 40px rgba(0, 229, 255, 0.18);
+  --radius:          12px;
+  --radius-sm:       8px;
+  --transition:      all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Textstorlekar – Dator */
+  --h1-size:  2.6rem;
+  --h2-size:  1.8rem;
+  --h3-size:  1.2rem;
+  --p-size:   1rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover, a:focus {
+  color: #fff;
+  text-decoration: underline;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* --- TABLETT: 2 kolumner (768px – 1199px) --- */
+@media (max-width: 1199px) {
+  :root {
+    --h1-size: 2rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.1rem;
+    --p-size:  0.95rem;
+  }
+
+}
+
+/* --- MOBIL: 1 kolumn (under 768px) --- */
+@media (max-width: 767px) {
+  :root {
+    --h1-size: 1.7rem;
+    --h2-size: 1.25rem;
+    --h3-size: 1rem;
+    --p-size:  0.9rem;
+  }
+
 body{
         display: flex; 
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 1280px) {
-body{
-        display: grid;
-        grid-template-columns: 1fr 6fr;
-        grid-template-rows: 20vh 60vh 10vh;
-        
-    }
-}
-@media screen and (min-width: 1280px) {
-body{
-        display: grid;
-        grid-template-columns: 1fr 6fr;
-        grid-template-rows: 10vh 40vh 10vh;
-        
     }
 }
