@@ -10,8 +10,267 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>¨
+
+<!-- SIDHUVUD -->
+<header class="site-header">
+  <div class="nav-inner">
+
+    <a class="logo" href="#">Tech<span>Shop</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#">Hem</a></li>
+      <li><a href="#">Produkter</a></li>
+      <li><a href="#">Om oss</a></li>
+      <li><a href="#">Kontakt</a></li>
+      <li><a href="#">Butikslänkar</a></li>
+    </ul>
+
+    <button class="varukorg-btn" onclick="oppnaVarukorg()" type="button">
+      🛒 Varukorg
+      <span class="varukorg-antal">0</span>
+    </button>
+
+    <button class="hamburger" onclick="toggleMobiMeny()" type="button" aria-label="toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <nav id="mobileMenu" aria-label="Menu">
+    <a href="#">🏠 Hem</a>
+    <a href="#">🛍️ Produkter</a>
+    <a href="#">[i] Om oss</a>
+    <a href="#">📞 Kontakt</a>
+    <a href="#">🔗 Butikslänkar</a>
+    <a href="#">🛒 Varukorg</a>
+  </nav>
+</header>
 
 
+<!-- HERO-SEKTION -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">/ New collection 2026</p>
+    <h1>Technology that<br>changes your everyday life</h1>
+    <p>Discover the best gadgets for audio, time, productivity and connectivity - curated for you.</p>
+    <a href="#products" class="hero-btn">See products →</a>
+  </div>
+</section>
+
+
+<!-- PRODUKTER -->
+<section id="products">
+  <div class="section-header">
+    <h2>Our Products</h2>
+    <span>6 products</span>
+  </div>
+
+  <!-- Sök och filter -->
+  <div class="search-bar">
+    <label for="search-input">Search:</label>
+    <input
+      type="search"
+      id="search-input"
+      placeholder="Search product..."
+      oninput="filterProducts()"
+      autocomplete="off">
+
+    <label for="filter-category">Category:</label>
+    <select id="filter-category" onchange="filterProducts()">
+      <option value="">All categories</option>
+      <option value="Headphones">Headphones</option>
+      <option value="Smartwatch">Smartwatch</option>
+      <option value="Charging">Charging</option>
+      <option value="Computer">Computer</option>
+      <option value="Cables">Cables</option>
+    </select>
+  </div>
+
+  <!-- Produktgrid -->
+  <div class="product-grid" id="product-grid">
+
+    <article class="product-card">
+      <div class="card-img">
+        <span class="badge">Best seller</span>
+        <img src="img/web 2.1.webp" alt="Sony WH-1000XM5 headphones">
+      </div>
+
+      <div class="card-info">
+        <p class="category">Headphones</p>
+        <h3>Sony WH-1000XM5</h3>
+        <p>Industry-leading noise cancellation with 30 hours battery life.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">3 490 kr</span>
+        <button type="button" onclick="addToCart(1)">+ Buy</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="card-img">
+        <span class="badge">Popular</span>
+        <img src="img/web 2.11.webp" alt="Apple AirPods Pro earbuds">
+      </div>
+      <div class="card-info">
+        <p class="category">Headphones</p>
+        <h3>Apple AirPods Pro</h3>
+        <p>Active noise cancellation and Adaptive Audio with MagSafe case.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">2 999 kr</span>
+        <button type="button" onclick="addToCart(2)">+ Buy</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="card-img">
+        <img src="img/web 2.12.webp" alt="Samsung Galaxy Watch 6 smartwatch">
+      </div>
+      <div class="card-info">
+        <p class="category">Smartwatch</p>
+        <h3>Samsung Galaxy Watch 6</h3>
+        <p>Advanced health monitoring with ECG and sleep tracking.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">3 299 kr</span>
+        <button type="button" onclick="addToCart(3)">+ Buy</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="card-img">
+        <span class="badge sale">Sale</span>
+        <img src="img/web 2.13.webp" alt="Anker 120W GaN charger">
+      </div>
+      <div class="card-info">
+        <p class="category">Charging</p>
+        <h3>Anker 120W GaN Charger</h3>
+        <p>Charge up to 4 devices at once with compact GaN technology.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">599 kr</span>
+        <button type="button" onclick="addToCart(4)">+ Buy</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="card-img">
+        <img src="img/web 2.14.webp" alt="Logitech MX Master 3S mouse">
+      </div>
+      <div class="card-info">
+        <p class="category">Computer</p>
+        <h3>Logitech MX Master 3S</h3>
+        <p>Ergonomic wireless mouse with MagSpeed scroll for professionals.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">1 299 kr</span>
+        <button type="button" onclick="addToCart(5)">+ Buy</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="card-img">
+        <img src="img/web 2.15.webp" alt="USB-C cable set 3-pack">
+      </div>
+      <div class="card-info">
+        <p class="category">Cables</p>
+        <h3>USB-C Cable Set 3-pack</h3>
+        <p>100W fast charging in three lengths: 0.5m, 1m and 2m.</p>
+      </div>
+      <div class="card-footer">
+        <span class="price">299 kr</span>
+        <button type="button" onclick="addToCart(6)">+ Buy</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- SIDFOT -->
+<footer>
+  <div class="footer-links">
+    <nav aria-label="Navigering">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Kundtjänst">
+      <h3>Customer service</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Delivery</a></li>
+        <li><a href="#">Warranty</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Information">
+      <h3>Information</h3>
+      <ul>
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Partners</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 TechShop Sverige AB. All rights reserved.</span>
+    <span>info@techshop.se · 08-123 456 78</span>
+  </div>
+</footer>
+
+
+<!-- VARUKORG -->
+<div class="overlay" id="overlay" onclick="stangVarukorg()"></div>
+
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-top">
+    <h2>🛒 Cart</h2>
+    <button onclick="stangVarukorg()" type="button">✕</button>
+  </div>
+
+  <div class="cart-items" id="cart-items">
+
+  <!-- fylls av JS -->
+  </div>
+
+  <div class="cart-bottom">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">0 kr</span>
+    </div>
+    <button class="checkout-btn" onclick="checkout()" type="button">Go to checkout →</button>
+    <button class="clear-btn" onclick="clearCart()" type="button">Clear cart</button>
+  </div>
+</aside>
+
+
+<!-- VÄLKOMST-POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h2>⚡ Welcome to TechShop!</h2>
+    <p>Free shipping on all orders over 499 kr.</p>
+    <button onclick="closePopup()" type="button">Start shopping!</button>
+  </div>
+</div>
+
+
+<!-- TOAST-NOTIFIKATION -->
+<div class="toast" id="toast"></div>
+
+
+<script src="js/script.js"></script>
 </body>
 </html>
