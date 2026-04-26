@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varukorg – TechShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidhuvud -->
+<header class="sidhuvud">
+  <a class="logo" href="index.html">Tech<span>Shop</span></a>
+
+  <ul class="nav-lankar">
+    <li><a href="index.html">Hem</a></li>
+    <li><a href="index.html#produkter">Produkter</a></li>
+    <li><a href="#">Om oss</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
+
+  <a href="varukorg.html" class="varukorg-knapp">
+    🛒 Varukorg <span class="varukorg-antal" id="varukorg-antal">0</span>
+  </a>
+</header>
+
+
+<!-- Varukorg innehåll -->
+<div id="varukorg-sida">
+
+  <a href="index.html" class="tillbaka-lank">← Tillbaka till butiken</a>
+
+  <h2>Din varukorg</h2>
+
+  <div id="varukorg-varor"></div>
+
+  <div id="varukorg-botten">
+    <p>Totalt: <strong id="total-pris">0 kr</strong></p>
+    <button type="button" onclick="kassa()">Gå till kassan →</button>
+    <button type="button" onclick="tomVarukorg()">Töm varukorg</button>
+  </div>
+
+</div>
+
+
+<!-- Sidfot -->
+<footer>
+  <div class="footer-lankar">
+    <nav aria-label="Navigering">
+      <h3>Navigering</h3>
+      <ul>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="index.html#produkter">Produkter</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Kundtjänst">
+      <h3>Kundtjänst</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Returer</a></li>
+        <li><a href="#">Leverans</a></li>
+        <li><a href="#">Garanti</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Information">
+      <h3>Information</h3>
+      <ul>
+        <li><a href="#">Integritetspolicy</a></li>
+        <li><a href="#">Villkor</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="footer-botten">
+    <span>© 2025 TechShop Sverige AB</span>
+    <span>info@techshop.se</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

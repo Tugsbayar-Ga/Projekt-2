@@ -1,276 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechShop</title>
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechShop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>¨
+<body>
 
-<!-- SIDHUVUD -->
-<header class="site-header">
-  <div class="nav-inner">
+<!-- Sidhuvud -->
+<header class="sidhuvud">
+  <a class="logo" href="#">Tech<span>Shop</span></a>
 
-    <a class="logo" href="#">Tech<span>Shop</span></a>
+  <ul class="nav-lankar">
+    <li><a href="#">Hem</a></li>
+    <li><a href="#produkter">Produkter</a></li>
+    <li><a href="#">Om oss</a></li>
+    <li><a href="#">Kontakt</a></li>
+  </ul>
 
-    <ul class="nav-links">
-      <li><a href="#">Hem</a></li>
-      <li><a href="#">Produkter</a></li>
-      <li><a href="#">Om oss</a></li>
-      <li><a href="#">Kontakt</a></li>
-      <li><a href="#">Butikslänkar</a></li>
-    </ul>
-
-    <button class="varukorg-btn" onclick="oppnaVarukorg()" type="button">
-      🛒 Varukorg
-      <span class="varukorg-antal">0</span>
-    </button>
-
-    <button class="hamburger" onclick="toggleMobiMeny()" type="button" aria-label="toggler">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-  </div>
-
-  <nav id="mobileMenu" aria-label="Menu">
-    <a href="#">🏠 Hem</a>
-    <a href="#">🛍️ Produkter</a>
-    <a href="#">[i] Om oss</a>
-    <a href="#">📞 Kontakt</a>
-    <a href="#">🔗 Butikslänkar</a>
-    <a href="#">🛒 Varukorg</a>
-  </nav>
+  <a href="varukorg.html" class="varukorg-knapp">
+    🛒 Varukorg <span class="varukorg-antal" id="varukorg-antal">0</span>
+  </a>
 </header>
 
 
-<!-- HERO-SEKTION -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-label">/ New collection 2026</p>
-    <h1>Technology that<br>changes your everyday life</h1>
-    <p>Discover the best gadgets for audio, time, productivity and connectivity - curated for you.</p>
-    <a href="#products" class="hero-btn">See products →</a>
+    <p class="hero-etikett">/ Ny kollektion 2026</p>
+    <h1>Teknik som förändrar din vardag</h1>
+    <p>Hörlurar, smartwatches, laddare och mer – till bra priser.</p>
+    <a href="#produkter" class="hero-knapp">Se produkterna →</a>
   </div>
 </section>
 
 
-<!-- PRODUKTER -->
-<section id="products">
-  <div class="section-header">
-    <h2>Our Products</h2>
-    <span>6 products</span>
+<!-- Produkter -->
+<section id="produkter">
+
+  <div class="sektion-rubrik">
+    <h2>Våra Produkter</h2>
+    <span>6 produkter</span>
   </div>
 
-  <!-- Sök och filter -->
-  <div class="search-bar">
-    <label for="search-input">Search:</label>
-    <input
-      type="search"
-      id="search-input"
-      placeholder="Search product..."
-      oninput="filterProducts()"
-      autocomplete="off">
+<div class="produkt-grid">
 
-    <label for="filter-category">Category:</label>
-    <select id="filter-category" onchange="filterProducts()">
-      <option value="">All categories</option>
-      <option value="Headphones">Headphones</option>
-      <option value="Smartwatch">Smartwatch</option>
-      <option value="Charging">Charging</option>
-      <option value="Computer">Computer</option>
-      <option value="Cables">Cables</option>
-    </select>
+<article class="produkt-kort kort-stor">
+  <div class="kort-bild">
+    <span class="badge">Bästsäljare</span>
+    <img src="img/web 2.1.webp" alt="Sony WH-1000XM5 trådlösa hörlurar med brusreducering">
   </div>
-
-  <!-- Produktgrid -->
-  <div class="product-grid" id="product-grid">
-
-    <article class="product-card">
-      <div class="card-img">
-        <span class="badge">Best seller</span>
-        <img src="img/web 2.1.webp" alt="Sony WH-1000XM5 headphones">
-      </div>
-
-      <div class="card-info">
-        <p class="category">Headphones</p>
-        <h3>Sony WH-1000XM5</h3>
-        <p>Industry-leading noise cancellation with 30 hours battery life.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">3 490 kr</span>
-        <button type="button" onclick="addToCart(1)">+ Buy</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="card-img">
-        <span class="badge">Popular</span>
-        <img src="img/web 2.11.webp" alt="Apple AirPods Pro earbuds">
-      </div>
-      <div class="card-info">
-        <p class="category">Headphones</p>
-        <h3>Apple AirPods Pro</h3>
-        <p>Active noise cancellation and Adaptive Audio with MagSafe case.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">2 999 kr</span>
-        <button type="button" onclick="addToCart(2)">+ Buy</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="card-img">
-        <img src="img/web 2.12.webp" alt="Samsung Galaxy Watch 6 smartwatch">
-      </div>
-      <div class="card-info">
-        <p class="category">Smartwatch</p>
-        <h3>Samsung Galaxy Watch 6</h3>
-        <p>Advanced health monitoring with ECG and sleep tracking.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">3 299 kr</span>
-        <button type="button" onclick="addToCart(3)">+ Buy</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="card-img">
-        <span class="badge sale">Sale</span>
-        <img src="img/web 2.13.webp" alt="Anker 120W GaN charger">
-      </div>
-      <div class="card-info">
-        <p class="category">Charging</p>
-        <h3>Anker 120W GaN Charger</h3>
-        <p>Charge up to 4 devices at once with compact GaN technology.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">599 kr</span>
-        <button type="button" onclick="addToCart(4)">+ Buy</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="card-img">
-        <img src="img/web 2.14.webp" alt="Logitech MX Master 3S mouse">
-      </div>
-      <div class="card-info">
-        <p class="category">Computer</p>
-        <h3>Logitech MX Master 3S</h3>
-        <p>Ergonomic wireless mouse with MagSpeed scroll for professionals.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">1 299 kr</span>
-        <button type="button" onclick="addToCart(5)">+ Buy</button>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <div class="card-img">
-        <img src="img/web 2.15.webp" alt="USB-C cable set 3-pack">
-      </div>
-      <div class="card-info">
-        <p class="category">Cables</p>
-        <h3>USB-C Cable Set 3-pack</h3>
-        <p>100W fast charging in three lengths: 0.5m, 1m and 2m.</p>
-      </div>
-      <div class="card-footer">
-        <span class="price">299 kr</span>
-        <button type="button" onclick="addToCart(6)">+ Buy</button>
-      </div>
-    </article>
-
+  <div class="kort-info">
+    <p class="kategori">Hörlurar</p>
+    <h3>Sony WH-1000XM5</h3>
+    <p>Branschledande brusreducering med 30 timmars batteritid.</p>
   </div>
+  <div class="kort-footer">
+    <span class="pris">3 490 kr</span>
+    <button type="button" onclick="laggTill('Sony WH-1000XM5', 3490)">+ Köp</button>
+  </div>
+</article>
+
+<article class="produkt-kort">
+  <div class="kort-bild">
+    <span class="badge">Populär</span>
+    <img src="img/web 2.11.webp" alt="Apple AirPods Pro med aktivt brusreducering och MagSafe">
+  </div>
+  <div class="kort-info">
+    <p class="kategori">Hörlurar</p>
+    <h3>Apple AirPods Pro</h3>
+    <p>Aktivt brusreducering och Adaptive Audio med MagSafe-case.</p>
+  </div>
+  <div class="kort-footer">
+    <span class="pris">2 999 kr</span>
+    <button type="button" onclick="laggTill('Apple AirPods Pro', 2999)">+ Köp</button>
+  </div>
+</article>
+
+<article class="produkt-kort">
+  <div class="kort-bild">
+    <span class="badge rea">REA</span>
+    <img src="img/web 2.12.webp" alt="Samsung Galaxy Watch 6 smartwatch med EKG och sömnspårning">
+  </div>
+  <div class="kort-info">
+    <p class="kategori">Smartwatch</p>
+    <h3>Samsung Galaxy Watch 6</h3>
+    <p>Avancerad hälsoövervakning med EKG och sömnspårning.</p>
+  </div>
+  <div class="kort-footer">
+    <span class="pris">3 299 kr</span>
+    <button type="button" onclick="laggTill('Samsung Galaxy Watch 6', 3299)">+ Köp</button>
+  </div>
+</article>
+
+<article class="produkt-kort">
+  <div class="kort-bild">
+    <img src="img/web 2.13.webp" alt="Anker 120W GaN laddare för upp till 4 enheter">
+  </div>
+  <div class="kort-info">
+    <p class="kategori">Laddning</p>
+    <h3>Anker 120W GaN Laddare</h3>
+    <p>Ladda upp till 4 enheter samtidigt med kompakt GaN-teknik.</p>
+  </div>
+  <div class="kort-footer">
+    <span class="pris">599 kr</span>
+    <button type="button" onclick="laggTill('Anker 120W GaN Laddare', 599)">+ Köp</button>
+  </div>
+</article>
+
+<article class="produkt-kort">
+  <div class="kort-bild">
+    <img src="img/web 2.14.webp" alt="Logitech MX Master 3S ergonomisk trådlös mus">
+  </div>
+  <div class="kort-info">
+    <p class="kategori">Dator</p>
+    <h3>Logitech MX Master 3S</h3>
+    <p>Ergonomisk trådlös mus med MagSpeed-scroll för proffs.</p>
+  </div>
+  <div class="kort-footer">
+    <span class="pris">1 299 kr</span>
+    <button type="button" onclick="laggTill('Logitech MX Master 3S', 1299)">+ Köp</button>
+  </div>
+</article>
+
+<article class="produkt-kort">
+  <div class="kort-bild">
+    <img src="img/web 2.15.webp" alt="USB-C Kabelset 3-pack för snabbladdning i tre längder">
+  </div>
+  <div class="kort-info">
+    <p class="kategori">Kablar</p>
+    <h3>USB-C Kabelset 3-pack</h3>
+    <p>100W snabbladdning i tre längder: 0.5m, 1m och 2m.</p>
+  </div>
+  <div class="kort-footer">
+    <span class="pris">299 kr</span>
+    <button type="button" onclick="laggTill('USB-C Kabelset 3-pack', 299)">+ Köp</button>
+  </div>
+</article>
+
+</div>
 </section>
 
 
-<!-- SIDFOT -->
+<!-- Sidfot -->
 <footer>
-  <div class="footer-links">
-    <nav aria-label="Navigering">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-
-    <nav aria-label="Kundtjänst">
-      <h3>Customer service</h3>
-      <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Returns</a></li>
-        <li><a href="#">Delivery</a></li>
-        <li><a href="#">Warranty</a></li>
-      </ul>
-    </nav>
-
-    <nav aria-label="Information">
-      <h3>Information</h3>
-      <ul>
-        <li><a href="#">Privacy policy</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Cookies</a></li>
-        <li><a href="#">Partners</a></li>
-      </ul>
-    </nav>
-
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2025 TechShop Sverige AB. All rights reserved.</span>
-    <span>info@techshop.se · 08-123 456 78</span>
-  </div>
+<div class="footer-lankar">
+  <nav aria-label="Navigering">
+    <h3>Navigering</h3>
+    <ul>
+      <li><a href="#">Hem</a></li>
+      <li><a href="#produkter">Produkter</a></li>
+      <li><a href="#">Om oss</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Kundtjänst">
+    <h3>Kundtjänst</h3>
+    <ul>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Returer</a></li>
+      <li><a href="#">Leverans</a></li>
+      <li><a href="#">Garanti</a></li>
+    </ul>
+  </nav>
+  <nav aria-label="Information">
+    <h3>Information</h3>
+    <ul>
+      <li><a href="#">Integritetspolicy</a></li>
+      <li><a href="#">Villkor</a></li>
+      <li><a href="#">Cookies</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="footer-botten">
+  <span>© 2025 TechShop Sverige AB</span>
+  <span>info@techshop.se</span>
+</div>
 </footer>
 
-
-<!-- VARUKORG -->
-<div class="overlay" id="overlay" onclick="stangVarukorg()"></div>
-
-<aside class="cart-panel" id="cart-panel">
-  <div class="cart-top">
-    <h2>🛒 Cart</h2>
-    <button onclick="stangVarukorg()" type="button">✕</button>
-  </div>
-
-  <div class="cart-items" id="cart-items">
-
-  <!-- fylls av JS -->
-  </div>
-
-  <div class="cart-bottom">
-    <div class="cart-total">
-      <span>Total:</span>
-      <span id="cart-total">0 kr</span>
-    </div>
-    <button class="checkout-btn" onclick="checkout()" type="button">Go to checkout →</button>
-    <button class="clear-btn" onclick="clearCart()" type="button">Clear cart</button>
-  </div>
-</aside>
-
-
-<!-- VÄLKOMST-POPUP -->
-<div class="popup" id="popup">
-  <div class="popup-box">
-    <h2>⚡ Welcome to TechShop!</h2>
-    <p>Free shipping on all orders over 499 kr.</p>
-    <button onclick="closePopup()" type="button">Start shopping!</button>
-  </div>
-</div>
-
-
-<!-- TOAST-NOTIFIKATION -->
-<div class="toast" id="toast"></div>
-
-
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
