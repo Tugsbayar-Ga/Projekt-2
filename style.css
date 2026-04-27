@@ -1,384 +1,503 @@
+/* ===== RESET ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #0D0F14;
-    color: #E8EAF0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  background-color: #0D0F14;
+  color: #E8EAF0;
 }
-
-/* Rubriker */
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1rem; }
 
 a {
-    color: #00E5FF;
-    text-decoration: none;
+  text-decoration: none;
+  color: #E8EAF0;
 }
 
-a:hover { text-decoration: underline; }
-a:focus, button:focus { outline: 2px solid #00E5FF; }
+ul {
+  list-style: none;
+}
 
-img { max-width: 100%; display: block; }
-ul { list-style: none; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-/* SIDHUVUD */
 
+/* ===== SIDHUVUD ===== */
 .sidhuvud {
-    background-color: #1A1A2E;
-    border-bottom: 1px solid #252A35;
-    padding: 0 20px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #1A1A2E;
+  border-bottom: 1px solid #252A35;
 }
 
-.logo { font-size: 1.3rem; color: white; }
-.logo > span { color: #00E5FF; }
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  color: #E8EAF0;
+}
+
+.logo span {
+  color: #00E5FF;
+}
 
 .nav-lankar {
-    display: flex;
-    gap: 5px;
-    list-style: none;
+  display: flex;
+  gap: 28px;
 }
 
 .nav-lankar a {
-    color: #8890A4;
-    padding: 5px 10px;
-    border-radius: 6px;
+  font-size: 15px;
+  color: #8890A4;
 }
 
 .nav-lankar a:hover {
-    color: white;
-    background-color: #ffffff15;
-    text-decoration: none;
+  color: #00E5FF;
 }
 
 .varukorg-knapp {
-    background: none;
-    border: 1px solid #252A35;
-    border-radius: 6px;
-    color: #E8EAF0;
-    padding: 5px 12px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #0D0F14;
+  border: 1px solid #00E5FF;
+  color: #00E5FF;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
-.varukorg-knapp:hover { border-color: #00E5FF; color: #00E5FF; }
+.varukorg-knapp:hover {
+  background-color: #00E5FF;
+  color: #000000;
+}
 
 .varukorg-antal {
-    background-color: #00E5FF;
-    color: black;
-    font-size: 0.7rem;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #00E5FF;
+  color: #000000;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
 
-/* HERO */
 
+/* ===== HERO ===== */
 .hero {
-    background-color: #111318;
-    border-bottom: 1px solid #252A35;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
+  background-color: #1A1A2E;
+  color: #E8EAF0;
+  padding: 80px 32px;
+  text-align: center;
+  border-bottom: 1px solid #252A35;
 }
-
-.hero-inner { max-width: 600px; }
 
 .hero-etikett {
-    color: #00E5FF;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+  font-size: 13px;
+  color: #00E5FF;
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.hero h1 { color: white; margin-bottom: 10px; }
-.hero-inner > p { color: #8890A4; margin-bottom: 20px; }
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 44px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #8890A4;
+  margin-bottom: 32px;
+}
 
 .hero-knapp {
-    background-color: #00E5FF;
-    color: black;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 8px;
-    display: inline-block;
+  background-color: #00E5FF;
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-.hero-knapp:hover { background-color: white; text-decoration: none; }
+.hero-knapp:hover {
+  background-color: #00ccdd;
+}
 
-/* PRODUKTER */
 
+/* ===== PRODUKTER ===== */
 #produkter {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
 }
 
 .sektion-rubrik {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #252A35;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
-.sektion-rubrik span { color: #8890A4; font-size: 0.85rem; }
+.sektion-rubrik h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  color: #E8EAF0;
+}
 
-
-
-/* PRODUKTGRID - 3 kolumner på dator */
+.sektion-rubrik span {
+  font-size: 13px;
+  color: #8890A4;
+}
 
 .produkt-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-/* Första kortet tar 2 kolumner */
-.kort-stor {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    flex-direction: row;
-}
 
-.kort-stor .kort-bild { width: 50%; }
-.kort-stor .kort-info { flex: 1; }
-
+/* ===== PRODUKT-KORT ===== */
 .produkt-kort {
-    background-color: #161920;
-    border: 1px solid #252A35;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  background-color: #161920;
+  border: 1px solid #252A35;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .produkt-kort:hover {
-    border-color: #00E5FF50;
-    transform: translateY(-3px);
-    transition: 0.2s;
+  border-color: #00E5FF;
 }
 
 .kort-bild {
-    background-color: #1a1d24;
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    position: relative;
+  background-color: #1e2330;
+  aspect-ratio: 4/3;
+  overflow: hidden;
 }
 
-.kort-bild img { width: 100%; height: 100%; object-fit: cover; }
+.kort-bild img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .badge {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    background-color: #7C4DFF;
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    padding: 2px 7px;
-    border-radius: 4px;
+  background-color: #7C4DFF;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin: 10px;
 }
 
-.badge.rea { background-color: #E53935; }
+.badge.rea {
+  background-color: #00E5FF;
+  color: #000000;
+}
 
 .kort-info {
-    padding: 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  padding: 16px;
+  flex: 1;
 }
 
-.kategori { color: #00E5FF; font-size: 0.75rem; text-transform: uppercase; }
-.kort-info h3 { color: white; }
-.kort-info p { color: #8890A4; font-size: 0.85rem; }
+.kategori {
+  font-size: 11px;
+  color: #00E5FF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.kort-info h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  color: #E8EAF0;
+  margin-bottom: 6px;
+}
+
+.kort-info p {
+  font-size: 13px;
+  color: #8890A4;
+  line-height: 1.5;
+}
 
 .kort-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 12px;
-    border-top: 1px solid #252A35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid #252A35;
 }
 
-.pris { color: #00E5FF; font-size: 1.1rem; font-weight: bold; }
-
-.kort-footer > button {
-    background-color: #00E5FF;
-    color: black;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    padding: 6px 12px;
-    cursor: pointer;
+.pris {
+  font-size: 16px;
+  font-weight: 700;
+  color: #00E5FF;
 }
 
-.kort-footer > button:hover { background-color: white; }
-
-/* SIDFOT */
-
-footer {
-    background-color: #1A1A2E;
-    border-top: 1px solid #252A35;
-    margin-top: 50px;
-    padding: 30px 20px 15px;
+.kort-footer button {
+  background-color: #00E5FF;
+  color: #000000;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.footer-lankar {
-    max-width: 1200px;
-    margin: 0 auto 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.kort-footer button:hover {
+  background-color: #00ccdd;
 }
 
-.footer-lankar h3 { color: #8890A4; font-size: 0.85rem; margin-bottom: 10px; }
-.footer-lankar ul { display: flex; flex-direction: column; gap: 5px; }
-.footer-lankar a { color: #8890A4; font-size: 0.88rem; }
-.footer-lankar a:hover { color: #00E5FF; text-decoration: none; }
 
-.footer-botten {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #252A35;
-    padding-top: 15px;
-    color: #8890A4;
-    font-size: 0.82rem;
-}
-
-/* SURFPLATTA - 2 kolumner */
-
-@media (max-width: 1100px) {
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.3rem; }
-    .produkt-grid { grid-template-columns: repeat(2, 1fr); }
-    .footer-lankar { grid-template-columns: repeat(2, 1fr); }
-    .kort-stor { grid-column: 1 / 3; flex-direction: column; }
-    .kort-stor .kort-bild { width: 100%; }
-}
-
-/* MOBIL - 1 kolumn */
-
-@media (max-width: 768px) {
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.2rem; }
-    .nav-lankar { display: none; }
-    .produkt-grid { grid-template-columns: 1fr; }
-    .footer-lankar { grid-template-columns: 1fr; }
-    .footer-botten { flex-direction: column; gap: 5px; }
-    .sokrad { flex-direction: column; }
-    .kort-stor { grid-column: 1; flex-direction: column; }
-}
-
-/* VARUKORG SIDA */
-
+/* ===== VARUKORG-SIDA ===== */
 #varukorg-sida {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 0 20px;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+#varukorg-sida h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  color: #E8EAF0;
+  margin-bottom: 24px;
 }
 
 .tillbaka-lank {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #8890A4;
+  font-size: 14px;
+  color: #00E5FF;
+  margin-bottom: 20px;
+  display: block;
 }
 
-.tillbaka-lank:hover { color: #00E5FF; }
+.tillbaka-lank:hover {
+  color: #00ccdd;
+}
 
-#varukorg-sida h2 { margin-bottom: 20px; }
-
-/* Varje rad i varukorgen */
 .varukorg-rad {
-    background-color: #161920;
-    border: 1px solid #252A35;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #161920;
+  border: 1px solid #252A35;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
 }
 
-.varukorg-rad p { flex: 1; font-weight: bold; }
-.varukorg-rad span { color: #00E5FF; }
+.varukorg-rad p {
+  flex: 1;
+  font-size: 15px;
+  color: #E8EAF0;
+}
 
-.antal-kontroll { display: flex; align-items: center; gap: 5px; }
+.varukorg-rad > span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #00E5FF;
+  min-width: 90px;
+  text-align: right;
+}
+
+.antal-kontroll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .antal-kontroll button {
-    background-color: #252A35;
-    border: 1px solid #252A35;
-    color: white;
-    border-radius: 4px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #252A35;
+  background-color: #0D0F14;
+  color: #E8EAF0;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.antal-kontroll button:hover { border-color: #00E5FF; color: #00E5FF; }
+.antal-kontroll button:hover {
+  border-color: #00E5FF;
+  color: #00E5FF;
+}
+
+.antal-kontroll span {
+  font-size: 15px;
+  min-width: 20px;
+  text-align: center;
+  color: #E8EAF0;
+}
 
 .ta-bort {
-    background: none;
-    border: none;
-    color: #8890A4;
-    cursor: pointer;
-    font-size: 1rem;
+  background-color: #161920;
+  border: 1px solid #252A35;
+  color: #8890A4;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
-.ta-bort:hover { color: #E53935; }
+.ta-bort:hover {
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
 
-/* Botten på varukorgs-sidan */
 #varukorg-botten {
-    border-top: 1px solid #252A35;
-    padding-top: 20px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  margin-top: 24px;
+  padding: 20px;
+  background-color: #161920;
+  border: 1px solid #252A35;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-#varukorg-botten p { font-size: 1.2rem; }
-#total-pris { color: #00E5FF; }
+#varukorg-botten p {
+  font-size: 17px;
+  color: #E8EAF0;
+}
+
+#total-pris {
+  color: #00E5FF;
+}
 
 #varukorg-botten button {
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
 }
 
 #varukorg-botten button:first-of-type {
-    background-color: #00E5FF;
-    color: black;
-    font-weight: bold;
+  background-color: #00E5FF;
+  color: #000000;
 }
 
-#varukorg-botten button:first-of-type:hover { background-color: white; }
+#varukorg-botten button:first-of-type:hover {
+  background-color: #00ccdd;
+}
 
 #varukorg-botten button:last-of-type {
-    background: none;
-    border: 1px solid #252A35;
-    color: #8890A4;
+  background-color: #252A35;
+  color: #8890A4;
+  border: 1px solid #252A35;
 }
 
-#varukorg-botten button:last-of-type:hover { border-color: #E53935; color: #E53935; }
+#varukorg-botten button:last-of-type:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+
+/* ===== SIDFOT ===== */
+footer {
+  background-color: #1A1A2E;
+  border-top: 1px solid #252A35;
+  color: #8890A4;
+  padding: 48px 32px 24px;
+  margin-top: 80px;
+}
+
+.footer-lankar {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-lankar h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  color: #E8EAF0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+
+.footer-lankar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-lankar a {
+  font-size: 14px;
+  color: #8890A4;
+}
+
+.footer-lankar a:hover {
+  color: #00E5FF;
+}
+
+.footer-botten {
+  border-top: 1px solid #252A35;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #8890A4;
+}
+
+
+/* ===== RESPONSIV ===== */
+@media (max-width: 1199px) {
+  .produkt-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidhuvud {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .nav-lankar {
+    display: none;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .produkt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-lankar {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .varukorg-rad {
+    flex-wrap: wrap;
+  }
+}
