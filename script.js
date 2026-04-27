@@ -1,28 +1,31 @@
 var varukorg = [];
 
-// Hämta sparad varukorg från localStorage
+// sparad varukorg
 var sparad = localStorage.getItem("varukorg");
 if (sparad != null) {
     varukorg = JSON.parse(sparad);
 }
 
-// Uppdatera antal-bubblan i sidhuvudet
+// antal
 function uppdateraAntal() {
     var antalEl = document.getElementById("varukorg-antal");
     if (antalEl == null) return;
 
     var totalt = 0;
-    for (var i = 0; i < varukorg.length; i++) {
+    var i = 0;
+    for (i = 0; i < varukorg.length; i++) {
         totalt = totalt + varukorg[i].antal;
     }
     antalEl.textContent = totalt;
 }
 
-// Lägg till vara i varukorgen
+// lägg till vara
 function laggTill(namn, pris) {
     var hittad = false;
+    var i = 0;
 
-    for (var i = 0; i < varukorg.length; i++) {
+    // kolla om finns
+    for (i = 0; i < varukorg.length; i++) {
         if (varukorg[i].namn == namn) {
             varukorg[i].antal = varukorg[i].antal + 1;
             hittad = true;
@@ -30,6 +33,7 @@ function laggTill(namn, pris) {
         }
     }
 
+    // funkar
     if (hittad == false) {
         var nyVara = { namn: namn, pris: pris, antal: 1 };
         varukorg.push(nyVara);
@@ -39,11 +43,13 @@ function laggTill(namn, pris) {
     uppdateraAntal();
 }
 
-// Ändra antal på en vara
+// ändra antal
 function andraAntal(namn, andring) {
-    for (var i = 0; i < varukorg.length; i++) {
+    var i = 0;
+    for (i = 0; i < varukorg.length; i++) {
         if (varukorg[i].namn == namn) {
             varukorg[i].antal = varukorg[i].antal + andring;
+
             if (varukorg[i].antal <= 0) {
                 taBort(namn);
                 return;
@@ -55,10 +61,12 @@ function andraAntal(namn, andring) {
     visaVarukorg();
 }
 
-// Ta bort en vara
+// ta bort vara
 function taBort(namn) {
     var nyArray = [];
-    for (var i = 0; i < varukorg.length; i++) {
+    var i = 0;
+    for (i = 0; i < varukorg.length; i++) {
+
         if (varukorg[i].namn != namn) {
             nyArray.push(varukorg[i]);
         }
@@ -68,22 +76,24 @@ function taBort(namn) {
     visaVarukorg();
 }
 
-// Töm hela varukorgen
+// töm varukorg
 function tomVarukorg() {
     varukorg = [];
     localStorage.setItem("varukorg", JSON.stringify(varukorg));
     visaVarukorg();
 }
 
-// Visa varorna på varukorg.html
+// visa varukorg
 function visaVarukorg() {
     var varorEl = document.getElementById("varukorg-varor");
-    if (varorEl == null) return;
+    if (varorEl == null) return; // funkar inte på index.html så avbryter
 
     uppdateraAntal();
 
+    // totalpris
     var totalPris = 0;
-    for (var i = 0; i < varukorg.length; i++) {
+    var i = 0;
+    for (i = 0; i < varukorg.length; i++) {
         totalPris = totalPris + (varukorg[i].pris * varukorg[i].antal);
     }
     document.getElementById("total-pris").textContent = totalPris.toLocaleString("sv-SE") + " kr";
@@ -98,7 +108,8 @@ function visaVarukorg() {
         return;
     }
 
-    for (var i = 0; i < varukorg.length; i++) {
+    // bygg rader
+    for (i = 0; i < varukorg.length; i++) {
         var vara = varukorg[i];
 
         var rad = document.createElement("div");
@@ -118,18 +129,19 @@ function visaVarukorg() {
     }
 }
 
-// Kassa
+// kassa
 function kassa() {
     if (varukorg.length == 0) return;
 
     var total = 0;
-    for (var i = 0; i < varukorg.length; i++) {
+    var i = 0;
+    for (i = 0; i < varukorg.length; i++) {
         total = total + (varukorg[i].pris * varukorg[i].antal);
     }
     alert("Beställning på " + total.toLocaleString("sv-SE") + " kr genomförd!");
     tomVarukorg();
 }
 
-// Kör när sidan laddas
+// starta
 uppdateraAntal();
 visaVarukorg();

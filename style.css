@@ -1,32 +1,22 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Space Grotesk', Arial, sans-serif;
   background-color: #0D0F14;
   color: #E8EAF0;
 }
-
 a {
   text-decoration: none;
   color: #E8EAF0;
 }
-
 ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-
-/* ===== SIDHUVUD ===== */
+/* sidhuvud */
 .sidhuvud {
   display: flex;
   align-items: center;
@@ -35,31 +25,25 @@ img {
   background-color: #1A1A2E;
   border-bottom: 1px solid #252A35;
 }
-
 .logo {
   font-family: 'Syne', sans-serif;
   font-size: 22px;
-  color: #E8EAF0;
 }
-
+/* cyan */
 .logo span {
   color: #00E5FF;
 }
-
 .nav-lankar {
   display: flex;
   gap: 28px;
 }
-
 .nav-lankar a {
   font-size: 15px;
   color: #8890A4;
 }
-
-.nav-lankar a:hover {
+.nav-lankar a:hover, .footer-lankar a:hover {
   color: #00E5FF;
 }
-
 .varukorg-knapp {
   display: flex;
   align-items: center;
@@ -71,12 +55,10 @@ img {
   border-radius: 8px;
   font-size: 15px;
 }
-
 .varukorg-knapp:hover {
   background-color: #00E5FF;
   color: #000000;
 }
-
 .varukorg-antal {
   background-color: #00E5FF;
   color: #000000;
@@ -90,16 +72,13 @@ img {
   font-size: 12px;
 }
 
-
-/* ===== HERO ===== */
+/* hero */
 .hero {
   background-color: #1A1A2E;
-  color: #E8EAF0;
   padding: 80px 32px;
   text-align: center;
   border-bottom: 1px solid #252A35;
 }
-
 .hero-etikett {
   font-size: 13px;
   color: #00E5FF;
@@ -107,20 +86,17 @@ img {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-
 .hero h1 {
   font-family: 'Syne', sans-serif;
   font-size: 44px;
   margin-bottom: 16px;
   line-height: 1.2;
 }
-
 .hero p {
   font-size: 17px;
   color: #8890A4;
   margin-bottom: 32px;
 }
-
 .hero-knapp {
   background-color: #00E5FF;
   color: #000000;
@@ -129,45 +105,35 @@ img {
   font-size: 15px;
   font-weight: 600;
 }
-
 .hero-knapp:hover {
   background-color: #00ccdd;
 }
 
-
-/* ===== PRODUKTER ===== */
+/* produkter */
 #produkter {
   max-width: 1200px;
   margin: 60px auto;
   padding: 0 24px;
 }
-
 .sektion-rubrik {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 32px;
 }
-
 .sektion-rubrik h2 {
   font-family: 'Syne', sans-serif;
   font-size: 28px;
-  color: #E8EAF0;
 }
-
 .sektion-rubrik span {
   font-size: 13px;
   color: #8890A4;
 }
-
 .produkt-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-
-
-/* ===== PRODUKT-KORT ===== */
 .produkt-kort {
   background-color: #161920;
   border: 1px solid #252A35;
@@ -176,23 +142,20 @@ img {
   display: flex;
   flex-direction: column;
 }
-
 .produkt-kort:hover {
   border-color: #00E5FF;
 }
-
 .kort-bild {
   background-color: #1e2330;
   aspect-ratio: 4/3;
   overflow: hidden;
 }
-
 .kort-bild img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+/* etikett */
 .badge {
   background-color: #7C4DFF;
   color: #ffffff;
@@ -205,17 +168,14 @@ img {
   width: fit-content;
   margin: 10px;
 }
-
 .badge.rea {
   background-color: #00E5FF;
   color: #000000;
 }
-
 .kort-info {
   padding: 16px;
   flex: 1;
 }
-
 .kategori {
   font-size: 11px;
   color: #00E5FF;
@@ -223,20 +183,16 @@ img {
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
-
 .kort-info h3 {
   font-family: 'Syne', sans-serif;
   font-size: 16px;
-  color: #E8EAF0;
   margin-bottom: 6px;
 }
-
 .kort-info p {
   font-size: 13px;
   color: #8890A4;
   line-height: 1.5;
 }
-
 .kort-footer {
   display: flex;
   align-items: center;
@@ -244,13 +200,11 @@ img {
   padding: 12px 16px;
   border-top: 1px solid #252A35;
 }
-
 .pris {
   font-size: 16px;
   font-weight: 700;
   color: #00E5FF;
 }
-
 .kort-footer button {
   background-color: #00E5FF;
   color: #000000;
@@ -261,37 +215,22 @@ img {
   font-weight: 600;
   cursor: pointer;
 }
-
 .kort-footer button:hover {
   background-color: #00ccdd;
 }
 
-
-/* ===== VARUKORG-SIDA ===== */
+/* varukorg */
 #varukorg-sida {
   max-width: 700px;
   margin: 60px auto;
   padding: 0 24px;
 }
-
-#varukorg-sida h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: 28px;
-  color: #E8EAF0;
-  margin-bottom: 24px;
-}
-
 .tillbaka-lank {
   font-size: 14px;
   color: #00E5FF;
   margin-bottom: 20px;
   display: block;
 }
-
-.tillbaka-lank:hover {
-  color: #00ccdd;
-}
-
 .varukorg-rad {
   display: flex;
   align-items: center;
@@ -302,13 +241,10 @@ img {
   padding: 14px 18px;
   margin-bottom: 12px;
 }
-
 .varukorg-rad p {
   flex: 1;
   font-size: 15px;
-  color: #E8EAF0;
 }
-
 .varukorg-rad > span {
   font-size: 15px;
   font-weight: 700;
@@ -316,13 +252,11 @@ img {
   min-width: 90px;
   text-align: right;
 }
-
 .antal-kontroll {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .antal-kontroll button {
   width: 30px;
   height: 30px;
@@ -333,19 +267,15 @@ img {
   font-size: 16px;
   cursor: pointer;
 }
-
 .antal-kontroll button:hover {
   border-color: #00E5FF;
   color: #00E5FF;
 }
-
 .antal-kontroll span {
   font-size: 15px;
   min-width: 20px;
   text-align: center;
-  color: #E8EAF0;
 }
-
 .ta-bort {
   background-color: #161920;
   border: 1px solid #252A35;
@@ -355,12 +285,10 @@ img {
   padding: 4px 8px;
   border-radius: 6px;
 }
-
 .ta-bort:hover {
   color: #ff4d4d;
   border-color: #ff4d4d;
 }
-
 #varukorg-botten {
   margin-top: 24px;
   padding: 20px;
@@ -373,16 +301,9 @@ img {
   gap: 12px;
   flex-wrap: wrap;
 }
-
-#varukorg-botten p {
-  font-size: 17px;
-  color: #E8EAF0;
-}
-
 #total-pris {
   color: #00E5FF;
 }
-
 #varukorg-botten button {
   padding: 10px 22px;
   border-radius: 8px;
@@ -396,7 +317,6 @@ img {
   background-color: #00E5FF;
   color: #000000;
 }
-
 #varukorg-botten button:first-of-type:hover {
   background-color: #00ccdd;
 }
@@ -406,14 +326,12 @@ img {
   color: #8890A4;
   border: 1px solid #252A35;
 }
-
 #varukorg-botten button:last-of-type:hover {
   border-color: #ff4d4d;
   color: #ff4d4d;
 }
 
-
-/* ===== SIDFOT ===== */
+/* footer */
 footer {
   background-color: #1A1A2E;
   border-top: 1px solid #252A35;
@@ -421,13 +339,11 @@ footer {
   padding: 48px 32px 24px;
   margin-top: 80px;
 }
-
 .footer-lankar {
   display: flex;
   gap: 60px;
   margin-bottom: 40px;
 }
-
 .footer-lankar h3 {
   font-family: 'Syne', sans-serif;
   font-size: 13px;
@@ -436,33 +352,19 @@ footer {
   letter-spacing: 1.5px;
   margin-bottom: 14px;
 }
-
 .footer-lankar ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
-.footer-lankar a {
-  font-size: 14px;
-  color: #8890A4;
-}
-
-.footer-lankar a:hover {
-  color: #00E5FF;
-}
-
 .footer-botten {
   border-top: 1px solid #252A35;
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
-  color: #8890A4;
 }
 
-
-/* ===== RESPONSIV ===== */
+/* responsiv */
 @media (max-width: 1199px) {
   .produkt-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -475,28 +377,22 @@ footer {
     gap: 12px;
     padding: 14px 16px;
   }
-
   .nav-lankar {
     display: none;
   }
-
   .hero {
     padding: 50px 20px;
   }
-
   .hero h1 {
     font-size: 28px;
   }
-
   .produkt-grid {
     grid-template-columns: 1fr;
   }
-
   .footer-lankar {
     flex-direction: column;
     gap: 30px;
   }
-
   .varukorg-rad {
     flex-wrap: wrap;
   }
