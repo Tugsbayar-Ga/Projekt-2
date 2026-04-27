@@ -130,3 +130,6 @@ function kassa() {
     tomVarukorg();
 }
 
+// Kör när sidan laddas
+uppdateraAntal();
+visaVarukorg();
