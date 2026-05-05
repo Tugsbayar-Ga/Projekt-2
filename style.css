@@ -9,7 +9,6 @@ body {
   color: #E8EAF0;
 }
 a {
-  text-decoration: none;
   color: #E8EAF0;
 }
 ul {
@@ -129,6 +128,7 @@ ul {
   font-size: 13px;
   color: #8890A4;
 }
+/* produkternas struktur */
 .produkt-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -158,13 +158,8 @@ ul {
 /* etikett */
 .badge {
   background-color: #7C4DFF;
-  color: #ffffff;
-  font-size: 10px;
   font-weight: 700;
   padding: 3px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   width: fit-content;
   margin: 10px;
 }
@@ -174,12 +169,10 @@ ul {
 }
 .kort-info {
   padding: 16px;
-  flex: 1;
 }
 .kategori {
   font-size: 11px;
   color: #00E5FF;
-  text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
@@ -226,109 +219,9 @@ ul {
   padding: 0 24px;
 }
 .tillbaka-lank {
-  font-size: 14px;
   color: #00E5FF;
   margin-bottom: 20px;
   display: block;
-}
-.varukorg-rad {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background-color: #161920;
-  border: 1px solid #252A35;
-  border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
-}
-.varukorg-rad p {
-  flex: 1;
-  font-size: 15px;
-}
-.varukorg-rad > span {
-  font-size: 15px;
-  font-weight: 700;
-  color: #00E5FF;
-  min-width: 90px;
-  text-align: right;
-}
-.antal-kontroll {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.antal-kontroll button {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #252A35;
-  background-color: #0D0F14;
-  color: #E8EAF0;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.antal-kontroll button:hover {
-  border-color: #00E5FF;
-  color: #00E5FF;
-}
-.antal-kontroll span {
-  font-size: 15px;
-  min-width: 20px;
-  text-align: center;
-}
-.ta-bort {
-  background-color: #161920;
-  border: 1px solid #252A35;
-  color: #8890A4;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 6px;
-}
-.ta-bort:hover {
-  color: #ff4d4d;
-  border-color: #ff4d4d;
-}
-#varukorg-botten {
-  margin-top: 24px;
-  padding: 20px;
-  background-color: #161920;
-  border: 1px solid #252A35;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-#total-pris {
-  color: #00E5FF;
-}
-#varukorg-botten button {
-  padding: 10px 22px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-}
-
-#varukorg-botten button:first-of-type {
-  background-color: #00E5FF;
-  color: #000000;
-}
-#varukorg-botten button:first-of-type:hover {
-  background-color: #00ccdd;
-}
-
-#varukorg-botten button:last-of-type {
-  background-color: #252A35;
-  color: #8890A4;
-  border: 1px solid #252A35;
-}
-#varukorg-botten button:last-of-type:hover {
-  border-color: #ff4d4d;
-  color: #ff4d4d;
 }
 
 /* footer */
@@ -348,15 +241,10 @@ footer {
   font-family: 'Syne', sans-serif;
   font-size: 13px;
   color: #E8EAF0;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 14px;
 }
-.footer-lankar ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+
 .footer-botten {
   border-top: 1px solid #252A35;
   padding-top: 20px;
